@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// import { ReactComponent as Logo } from '../../assets/imgs/logo_white_313.png';
 import Logo from '../../assets/imgs/logo_white.png';
 import button from '../../assets/imgs/button-wallet.png'
 
@@ -13,15 +14,15 @@ const Header = () => (
       <img src= { Logo } id='logo'/>
     </Link>
     <div className='options'>
-      <Link className='option' to='/' style={{ textDecoration: 'none' }}>
-        HOME
-      </Link>
-      <Link className='option' to='/' style={{ textDecoration: 'none' }}>
+        <Link className='option' to='/' style={{ textDecoration: 'none' }}>
+            HOME
+        </Link>
+        <Link className='option' to='/' style={{ textDecoration: 'none' }}>
             MINT
-      </Link>
-      <Link className='option' to='/'>
-        <img src= { button } id='button' />
-      </Link>
+        </Link>
+        <Link className='option' to='/'>
+            <img src= { button } id='button' />
+        </Link>
     </div>
   </div>
 );

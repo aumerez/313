@@ -1,11 +1,12 @@
 body {
-  margin: 0;
-  padding-top: 40px;
-  padding-bottom: 20px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   background-image: url("/src/assets/imgs/Background_Orange.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-color: rgb(245, 111, 62);
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 /* body {
