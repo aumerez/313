@@ -43,8 +43,9 @@ class MetamaskButton extends React.Component {
   }*/
   
   render() {
+    const text = 'CONNECT \n WALLET';
     return (
-      <button className='button'><img src={require('../../assets/imgs/button-wallet.png')}></img></button>
+      <button className='button'>{text}</button>
     );
   }
 }

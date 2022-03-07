@@ -2,7 +2,6 @@ import React from 'react';
 
 import ilustration from '../../assets/imgs/Illustration-02.png';
 import scroll from '../../assets/imgs/ScrollBar-01.png';
-import styletext from '../../assets/fonts/LeagueGothic-Italic.otf';
 
 import './homepage.styles.scss';
 

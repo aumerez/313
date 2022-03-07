@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import Logo from '../../assets/imgs/logo_white.png';
 import button from '../../assets/imgs/button-wallet.png'
 
+import MetamaskButton from '../metamask-button/metamask-button.component';
+
 import './header.styles.scss';
 import { maxHeight } from '@mui/system';
 
@@ -17,11 +19,11 @@ const Header = () => (
         <Link className='option' to='/' style={{ textDecoration: 'none' }}>
             HOME
         </Link>
-        <Link className='option' to='/' style={{ textDecoration: 'none' }}>
+        <Link className='option' to='/mint' style={{ textDecoration: 'none' }}>
             MINT
         </Link>
         <Link className='option' to='/'>
-            <img src= { button } id='button' />
+            <MetamaskButton />
         </Link>
     </div>
   </div>
