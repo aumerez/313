@@ -9,6 +9,7 @@ import Ticker from 'react-ticker'
 
 import '../../assets/fonts/LeagueGothic-Italic.otf';
 
+
 const HomePage = () => (
   <div>
     <div className='homepage'>
