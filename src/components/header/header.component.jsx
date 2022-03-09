@@ -10,7 +10,9 @@ import MetamaskButton from '../metamask-button/metamask-button.component';
 import './header.styles.scss';
 import { maxHeight } from '@mui/system';
 
+
 const Header = () => (
+
   <div className='header'>
     <Link className='logo-container' to='/'>
       <img src= { Logo } id='logo'/>
