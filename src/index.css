@@ -1,12 +1,25 @@
 body {
   padding-top: 0px;
   padding-bottom: 0px;
-  background-image: url("/src/assets/imgs/Background_Orange.png");
+  /* background-image: url("/src/assets/imgs/Background_Orange.png");
+  background-repeat: no-repeat;
+  background-size: cover; */
+  /* background-color: rgb(245, 111, 62); */
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+
+.mint {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-image: url("/src/assets/imgs/background_mint-01.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-color: rgb(245, 111, 62);
   margin-left: 0px;
   margin-right: 0px;
+  min-height: 100vh;
 }
 
 /* body {

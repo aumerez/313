@@ -1,3 +1,10 @@
+body {
+  background-image: url("../../assets/imgs/Background_Orange.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(245, 111, 62);
+}
+
 .homepage {
   align-items: center;
   padding: 0px;
@@ -5,6 +12,10 @@
   padding-left: 0px;
   margin-left: 150px;
   margin-right: 150px;
+  // background-image: url("../..//assets/imgs/background_mint-01.png");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-color: rgb(245, 111, 62);
   width: auto;
 }
 

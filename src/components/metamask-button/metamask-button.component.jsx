@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import './metamask-button.styles.scss';
+import '../../assets/fonts/LeagueGothic-Italic.otf';
 
 
 class MetamaskButton extends React.Component {
