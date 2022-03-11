@@ -11,27 +11,18 @@ body {
   margin-bottom: 0px;
 }
 
-
-/* .mint {
+.mints1 {
   padding-top: 0px;
   padding-bottom: 0px;
   background-image: url("/src/assets/imgs/background_mint-01.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: rgb(245, 111, 62);
+  background-color: rgb(245, 111, 62); 
   margin-left: 0px;
   margin-right: 0px;
-  min-height: 100vh;
-} */
-
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-} */
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

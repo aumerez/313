@@ -81,7 +81,7 @@ const MetamaskButton = () => {
   
   return (
     <button className='button' onClick={connectWallet} >
-      {wallet ? 'Connected' : 'Connect \n Wallet'}
+      {wallet ? 'Connected' : 'CONNECT \n WALLET'}
     </button>
   );
 }
