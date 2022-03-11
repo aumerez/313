@@ -83,10 +83,10 @@ const MetamaskButton = () => {
   return (
     <button className='button' onClick={connectWallet} >
       {wallet ? (
-      <div>Connected
+      <div>CONNECTED
         <div className='button-address-label'>{wallet.substring(0,15)}{'...'}</div>
-      </div>) : (<div>Connect
-          <div>Wallet</div>
+      </div>) : (<div>CONNECT
+          <div>WALLET</div>
           </div>) }
     </button>
   );
