@@ -1,10 +1,11 @@
 import React, { useEffect }  from "react";
+import { useSelector, useDispatch } from 'react-redux';
+
+import { NETWORKS } from '../../web3/networks'
+import { setCurrentWallet } from '../../redux/wallet/wallet.actions';
+
 import './metamask-button.styles.scss';
 import '../../assets/fonts/LeagueGothic-Italic.otf';
-import { NETWORKS } from '../../web3/networks'
-import { useSelector, useDispatch } from 'react-redux';
-import { setCurrentWallet } from '../../redux/wallet/wallet.actions';
-//import web3 from 'web3';
 
 const MetamaskButton = () => {
   const wallet = useSelector(state => state.wallet.currentWallet); 
@@ -81,7 +82,12 @@ const MetamaskButton = () => {
   
   return (
     <button className='button' onClick={connectWallet} >
-      {wallet ? 'Connected' : 'Connect \n Wallet'}
+      {wallet ? (
+      <div>Connected
+        <div className='button-address-label'>{wallet.substring(0,15)}{'...'}</div>
+      </div>) : (<div>Connect
+          <div>Wallet</div>
+          </div>) }
     </button>
   );
 }

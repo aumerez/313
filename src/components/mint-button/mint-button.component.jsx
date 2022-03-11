@@ -1,9 +1,9 @@
-import React, { useEffect }  from "react";
-import '../../assets/fonts/LeagueGothic-Italic.otf';
-import { useSelector, useDispatch } from 'react-redux';
-//import web3 from 'web3';
+import React  from "react";
+import { useSelector } from 'react-redux';
+
 import './mint-button.styles.scss';
-import { Button, Stack, Typography } from "@mui/material";
+import '../../assets/fonts/LeagueGothic-Italic.otf';
+
 
 const MintButton = () => {
   const wallet = useSelector(state => state.wallet.currentWallet); 
@@ -13,20 +13,22 @@ const MintButton = () => {
   }
   
   return (
-    <Button onClick={mint} 
-      variant="contained" 
-      style={{ textTransform: 'capitalize', fontSize: 'medium'}}
-      size='large'>
-        { wallet ? 
-        (<Stack direction="column" spacing={0}>
-          <Typography variant="body1" color="white" align='center'>
-            Mint
-          </Typography>  
-          <Typography variant="caption" color="white" fontSize='0.6rem' align='center'>
-            {`${wallet.substring(0,10)}${'...'}`}
-          </Typography>
-        </Stack>) : 'No Wallet Selected'}        
-    </Button>
+    <button className='mint-btn' onClick={mint}>
+       { wallet ? 
+        (<div>
+          { 'MINT' } 
+          <div className='mint-button-address-label'>
+            {wallet.substring(0,15)}{'...'}
+          </div>
+        </div>) : (
+          <div>MINT
+          <div className='mint-button-address-label'>
+            No Wallet Selected
+          </div>
+        </div>  
+        ) }
+    </button>
+
   );
 }
 

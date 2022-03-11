@@ -21,9 +21,9 @@ const Header = () => (
         <Link className='option' to='/mint' style={{ textDecoration: 'none' }}>
             MINT
         </Link>
-        <Link className='option' to='/'>
+        <div className='option'>
             <MetamaskButton />
-        </Link>
+        </div>
     </div>
   </div>
 );

@@ -12,7 +12,8 @@ const MintPage = () => (
             <h1>MINT A</h1>
             <h1>DETROIT</h1>
             <h1>SOCIALITE</h1>
-            <button className="btn">CLICK HERE</button>
+            <MintButton />
+            {/*<button className="btn">CLICK HERE</button>*/}
         </div>
     </div>
   );
