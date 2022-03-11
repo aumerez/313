@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/313/static/css/main.3ff779d7.css",
-    "main.js": "/313/static/js/main.a74bd5d1.js",
+    "main.css": "/313/static/css/main.000eaa0f.css",
+    "main.js": "/313/static/js/main.79a6d07f.js",
     "static/media/Illustration_Mint-01.png": "/313/static/media/Illustration_Mint-01.e06edfc091f340fcd9b8.png",
+    "static/media/background_mint-01.png": "/313/static/media/background_mint-01.6e9ada0dd4331fb6c3f7.png",
     "static/media/Background_Orange.png": "/313/static/media/Background_Orange.8ac3955c35d4bb7e4783.png",
     "static/media/Illustration-02.png": "/313/static/media/Illustration-02.bf28429a22572322d004.png",
     "static/media/logo_white.png": "/313/static/media/logo_white.76303385667710360553.png",
@@ -10,11 +11,11 @@
     "static/media/LeagueGothic-Regular.otf": "/313/static/media/LeagueGothic-Regular.308bc2693a3824fb67ed.otf",
     "static/media/LeagueGothic-Italic.otf": "/313/static/media/LeagueGothic-Italic.8d24e264b9b449a92db0.otf",
     "index.html": "/313/index.html",
-    "main.3ff779d7.css.map": "/313/static/css/main.3ff779d7.css.map",
-    "main.a74bd5d1.js.map": "/313/static/js/main.a74bd5d1.js.map"
+    "main.000eaa0f.css.map": "/313/static/css/main.000eaa0f.css.map",
+    "main.79a6d07f.js.map": "/313/static/js/main.79a6d07f.js.map"
   },
   "entrypoints": [
-    "static/css/main.3ff779d7.css",
-    "static/js/main.a74bd5d1.js"
+    "static/css/main.000eaa0f.css",
+    "static/js/main.79a6d07f.js"
   ]
 }
