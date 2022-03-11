@@ -6,15 +6,13 @@ import MintButton from '../../components/mint-button/mint-button.component';
 import './mintpage.styles.scss';
 
 const MintPage = () => (
-    <div className='background-mint'>
-        {/* <article className='article'>
-            <img className='image' src={ImageMint} alt='background' />
-            <h1 className='header'>React Is Awesome</h1>
-        </article> */}
-        <div class='mintpage'>
-            <img src={ImageMint} id='bg1' alt="Snow" />
-            <button class="btn">Button</button>
-            <MintButton />
+    <div classNames='mintpage'>
+        <img src={ImageMint} id='bg1' />
+        <div className='text-wrapper'>
+            <h1>MINT A</h1>
+            <h1>DETROIT</h1>
+            <h1>SOCIALITE</h1>
+            <button className="btn">CLICK HERE</button>
         </div>
     </div>
   );

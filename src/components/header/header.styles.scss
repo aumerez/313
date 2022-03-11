@@ -10,9 +10,11 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0px;
-  padding-left: 0px;
   background: none;
+  margin-bottom: 0px;
+  padding-top: 50px;
+  padding-left: 0px;
+  
 
   #logo {
     height: 50px;
@@ -48,33 +50,3 @@
     }
   }
 }
-
-// .font-menu {
-//   font-family: 'League';
-//   src: local('LeagueGothic-Italic.otf'), url('../../assets/fonts/LeagueGothic-Italic.otf'), format('otf');
-//   /* other formats include: 'woff2', 'truetype, 'opentype',
-//                             'embedded-opentype', and 'svg' */
-// }
-
-// .header {
-//     justify-content: space-between;
-//     height: 70px;
-//     width: 100%;
-//     display: flex;
-//     margin-bottom: 25px;
-//   }
-    
-//   .logo-container {
-//     height: 100%;
-//     width: 70px;
-//     padding-right: 25px;
-//   }
-  
-//   .media-icons {
-//     padding-right: 25px;
-//   }
-  
-//   .metamask-button {
-//     width: auto;
-//   }
-  
