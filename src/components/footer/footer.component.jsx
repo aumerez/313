@@ -1,32 +1,34 @@
 import * as React from "react";
 
-import Box from "@mui/material/Box";
-import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
-import NavbarBrand  from "react-bootstrap/NavbarBrand";
-
+import Stack from 'react-bootstrap/Stack';
 import  Navbar from 'react-bootstrap/Navbar';
 import  Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
+import { Instagram, Twitter } from 'react-bootstrap-icons';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../../assets/fonts/LeagueGothic-Italic.otf';
+import './footer.styles.scss';
 
-
-
-const styles = {
-  box: {
-    left: 0,
-    bottom: 0,
-    right: 0,
-  },
-};
 
 const Footer = () => {
   return(
     <div className="fixed-bottom">  
-        <Navbar color="dark" dark>
-            <Container className="container-fluid">
-                <NavbarBrand>Footer</NavbarBrand>
+        <Navbar >
+            <Container className="d-flex justify-content-center text-center">
+              <Stack gap={1}>
+                <Stack gap={1} direction="horizontal" className="d-flex justify-content-center text-center">
+                  <Nav.Link href='https://www.instagram.com/the313project/' target="_blank">
+                    <Instagram color="white" size='20'/>
+                  </Nav.Link>
+                  <Nav.Link href='https://twitter.com/313_Project' target="_blank">
+                    <Twitter color="white" size='20'/>
+                  </Nav.Link>
+                </Stack>
+                <div className="footer-text">
+                  2022 - 313 Project. All rights reserved
+                </div>  
+              </Stack>
             </Container>
         </Navbar>
     </div>)
