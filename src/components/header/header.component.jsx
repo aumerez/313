@@ -3,16 +3,17 @@ import { Link } from 'react-router-dom';
 import  Navbar from 'react-bootstrap/Navbar';
 import  Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import MetamaskButton from '../metamask-button/metamask-button.component';
 import { List } from 'react-bootstrap-icons';
 
-import Logo from '../../assets/imgs/logo_white.png';
 import './header.styles.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Logo from '../../assets/imgs/logo_white.png';
 
 const Header = () => (
 
-  <Navbar collapseOnSelect expand="lg" fixed="top" className='header'>
+  <Navbar collapseOnSelect expand="lg" fixed="top" className='header' bg="transparent">
     <Container>
       <Navbar.Brand>
         <Link to='/'>
@@ -33,7 +34,7 @@ const Header = () => (
           <Nav.Link as={Link} className="option" to='/'>Home</Nav.Link>
           <Nav.Link as={Link} className="option" to='/mint'>Mint</Nav.Link>
         </Nav>
-        <MetamaskButton className="d-flex nav-option"/>
+        <MetamaskButton className="d-flex option"/>
       </Navbar.Collapse>
     </Container>
   </Navbar>

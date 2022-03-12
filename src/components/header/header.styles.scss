@@ -7,18 +7,6 @@
 
 .header {
 
-  
-  #logo {
-    height: 50px;
-    width: auto;
-  }
-
-  #button {
-    height: 60px;
-    width: auto;
-    padding-right: 20px;
-  }
-
   .logo-container {
     height: 50px;
     width: 0px;
@@ -36,7 +24,7 @@
     .option {
       padding: 10px 15px;
       size: 200px;
-      color: white;
+      color: white !important;
       font-family: LeagueRegular;
       font-size: xx-large;
     }

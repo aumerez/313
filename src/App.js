@@ -7,10 +7,12 @@ import MintPage from './pages/mintpage/mintpage.component';
 
 import Header from './components/header/header.component';
 
+
+
 function App() {
   return (
-    <div className='body'>
-      <Header />
+    <div>
+      <Header /> 
       <Switch>
         <Route exact path='/' component={HomePage}></Route>
         <Route path='/313' component={HomePage}></Route>
