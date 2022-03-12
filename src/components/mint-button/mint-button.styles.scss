@@ -20,6 +20,7 @@
   white-space: pre-line;
   font-family: LeagueRegular;
   font-size: 55px;
+  line-height: 110%;
   
   &:hover {
     background-color: white;
@@ -29,7 +30,7 @@
   }
   
   .mint-button-address-label {
-    margin-top: 0px;
+    line-height: 20%;
     font-size: large !important;
   }
 

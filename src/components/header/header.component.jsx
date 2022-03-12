@@ -1,31 +1,42 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import  Navbar from 'react-bootstrap/Navbar';
+import  Nav from 'react-bootstrap/Nav';
+import Container from 'react-bootstrap/Container';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import MetamaskButton from '../metamask-button/metamask-button.component';
+import { List } from 'react-bootstrap-icons';
 
 import Logo from '../../assets/imgs/logo_white.png';
-
-import MetamaskButton from '../metamask-button/metamask-button.component';
-
 import './header.styles.scss';
-
 
 const Header = () => (
 
-  <div className='header'>
-    <Link className='logo-container' to='/'>
-      <img src= { Logo } id='logo'/>
-    </Link>
-    <div className='options'>
-        <Link className='option' to='/' style={{ textDecoration: 'none' }}>
-            HOME
+  <Navbar collapseOnSelect expand="lg" fixed="top" className='header'>
+    <Container>
+      <Navbar.Brand>
+        <Link to='/'>
+          <img src= { Logo } alt='The 313 Project' height="50"/>
         </Link>
-        <Link className='option' to='/mint' style={{ textDecoration: 'none' }}>
-            MINT
-        </Link>
-        <div className='option'>
-            <MetamaskButton />
-        </div>
-    </div>
-  </div>
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{
+        borderColor: 'white',
+        color: 'white',
+        caretColor: 'white',
+        outlineColor: 'white',
+        colorScheme:'white',
+        scrollbarColor: 'white'
+        }}
+      ><List color="white" size='24'/></Navbar.Toggle>
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="me-auto options">
+          <Nav.Link as={Link} className="option" to='/'>Home</Nav.Link>
+          <Nav.Link as={Link} className="option" to='/mint'>Mint</Nav.Link>
+        </Nav>
+        <MetamaskButton className="d-flex nav-option"/>
+      </Navbar.Collapse>
+    </Container>
+  </Navbar>
 );
 
 export default Header;
