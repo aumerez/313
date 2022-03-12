@@ -6,7 +6,7 @@
 }
 
 .header {
-
+  //background-color: black !important;
   .logo-container {
     height: 50px;
     width: 0px;
@@ -29,4 +29,12 @@
       font-size: xx-large;
     }
   }
+}
+
+.header-background-home {
+  background-image: url("../../assets/imgs/Background_Orange.png") !important;  
+}
+
+.header-background-mint {
+  background-image: url("../../assets/imgs/background_mint-01.png") !important;  
 }
