@@ -3,7 +3,8 @@ import './App.css';
 import { Switch, Route } from 'react-router-dom';
 
 import HomePage from './pages/homepage/homepage.component';
-import MintPage from './pages/mintpage/mintpage.component';
+//import MintPage from './pages/mintpage/mintpage.component';
+import MintPage from './pages/mint-page/mint-page.component';
 
 import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
