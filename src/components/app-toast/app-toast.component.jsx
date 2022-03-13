@@ -2,6 +2,8 @@ import React, { useState, useEffect} from "react";
 
 import { Toast } from "react-bootstrap";
 
+import './app-toast.styles.scss';
+
 export const TOAST_MESSAGE_TYPES = {
   SUCCESS : 'SUCCESS',
   ERROR : 'ERROR'
@@ -10,7 +12,7 @@ export const TOAST_MESSAGE_TYPES = {
 const AppToast = ({ showToast, toastContent }) => {
   const [open, setOpen] = useState(false);
   const handleClose = () => setOpen(false);
-  const { title, text, type, position } = toastContent;
+  const { title, text, type } = toastContent;
 
   useEffect(() => {
     setOpen(showToast);
@@ -20,8 +22,8 @@ const AppToast = ({ showToast, toastContent }) => {
     <Toast 
       show={open}
       onClose={handleClose}
-      position={position ? position : 'top-start'}
-      bg={type === TOAST_MESSAGE_TYPES.ERROR ? 'warning' : 'light'}>
+      className="app-toast"
+      bg={ type === TOAST_MESSAGE_TYPES.ERROR ? 'warning' : 'light'}>
       <Toast.Header>
         <strong className="me-auto">{title}</strong>
       </Toast.Header>

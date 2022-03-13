@@ -76,8 +76,7 @@ const MetamaskButton = () => {
           setToastContent({
             title: 'Network Error',
             text: 'Wrong Network. Please select Ethereum Network',
-            type: TOAST_MESSAGE_TYPES.ERROR,
-            position: 'middle-start'
+            type: TOAST_MESSAGE_TYPES.ERROR
           })
           setShowToast(true);
         }
