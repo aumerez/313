@@ -1,6 +1,9 @@
 import React, { useEffect, useState }  from "react";
 import { useSelector, useDispatch } from 'react-redux';
 
+import AppToast from "../app-toast/app-toast.component";
+import { TOAST_MESSAGE_TYPES } from "../app-toast/app-toast.component";
+
 import { NETWORKS } from '../../web3/networks'
 import { setCurrentWallet } from '../../redux/wallet/wallet.actions';
 
@@ -11,6 +14,13 @@ const MetamaskButton = () => {
   const [showMetamask, setShowMetamask ] = useState(false);
   const wallet = useSelector(state => state.wallet.currentWallet); 
   const dispatch = useDispatch();
+  const [ showToast, setShowToast ] = useState(false);
+  const [ toastContent, setToastContent ] = 
+    useState({
+      title : '',
+      text : '',
+      type : null
+    })
 
   useEffect(()=> {
     if (showMetamask || wallet) {
@@ -51,18 +61,25 @@ const MetamaskButton = () => {
   },[dispatch,wallet,showMetamask])
  
   const connectWallet = async () => {
-    setShowMetamask(true);
+    
     const { ethereum } = window;
     if (ethereum && !wallet) {
       try {
         const network = ethereum.networkVersion; //await web3.eth.getChainId;
         if (network < NETWORKS.ETHEREUM_GOERLY) {
+          setShowMetamask(true);
           const accounts = await ethereum.request({
             method: 'eth_requestAccounts'});
           console.log(accounts);
           dispatch (setCurrentWallet(accounts[0]));
         } else {
-          alert("Wrong Network. Please select Ethereum Network");
+          setToastContent({
+            title: 'Network Error',
+            text: 'Wrong Network. Please select Ethereum Network',
+            type: TOAST_MESSAGE_TYPES.ERROR,
+            position: 'middle-start'
+          })
+          setShowToast(true);
         }
       } catch (e) {
         console.log(e);
@@ -71,14 +88,19 @@ const MetamaskButton = () => {
   }
   
   return (
-    <button className='button' onClick={connectWallet} >
-      {wallet ? (
-      <div>Connected
-        <div className='button-address-label'>{wallet.substring(0,15)}{'...'}</div>
-      </div>) : (<div>Connect
-          <div>Wallet</div>
-          </div>) }
-    </button>
+    <div>
+     
+      <button className='button' onClick={connectWallet} >
+        {wallet ? (
+        <div>Connected
+          <div className='button-address-label'>{wallet.substring(0,15)}{'...'}</div>
+        </div>) : (<div>Connect
+            <div>Wallet</div>
+            </div>) }
+      </button>
+      <AppToast showToast={showToast} toastContent={toastContent} />
+    </div>
+    
   );
 }
 
