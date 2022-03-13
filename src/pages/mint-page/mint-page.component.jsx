@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../assets/fonts/LeagueGothic-Italic.otf';
 import './mint-page.styles.scss';
 
-import mintImage from '../../assets/imgs/Illustration_Mint-01.png';
+import mintImage from '../../assets/imgs/Illustration_Mint-01_Text2.png';
 import backgroundImage from "../../assets/imgs/background_mint-01.png";
 
 

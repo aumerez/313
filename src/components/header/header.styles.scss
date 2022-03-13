@@ -42,5 +42,6 @@
 }
 
 .header-background-mint {
-  background-image: url("../../assets/imgs/background_mint-01.png") !important;  
+  background-image: url("../../assets/imgs/background_mint-01.png") no-repeat center center fixed !important;
+  min-width: 100%;
 }
