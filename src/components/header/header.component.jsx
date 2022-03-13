@@ -12,14 +12,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Logo from '../../assets/imgs/logo_white.png';
 
+const getPageBackground = (pathname) => {
+  switch (pathname) {
+    case '/mint':
+      return 'header-background-mint';
+    default: 
+      return 'header-background-home';
+  }
+}
+
 const Header = () => {
   let location = useLocation();
 
   return (
   
     <Navbar collapseOnSelect expand="sm" fixed="top" 
-      className={`header ${location.pathname === '/' ? 'header-background-home' : 'header-background-mint'}`}>
-      <Container>
+      className={`header ${getPageBackground(location.pathname)}`}>
+      <Container fluid className="navbar-container">
         <Navbar.Brand>
           <Link to='/'>
             <img src= { Logo } alt='The 313 Project' height="50"/>
