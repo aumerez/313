@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "LeagueRegular";
+  src: local("LeagueGothic"),
+    url('../../assets/fonts/LeagueGothic-Regular.otf') format("truetype");
+  font-weight: normal;
+}
+
+.footer-text {
+  color: white;
+  font-size: small;
+  font-family: "LeagueRegular";
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+

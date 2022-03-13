@@ -6,7 +6,7 @@ import HomePage from './pages/homepage/homepage.component';
 import MintPage from './pages/mintpage/mintpage.component';
 
 import Header from './components/header/header.component';
-
+import Footer from './components/footer/footer.component';
 
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
         <Route path='/313' component={HomePage}></Route>
         <Route path='/mint' component={MintPage}></Route>
       </Switch>
+      <Footer />
     </div>
   );
 }
