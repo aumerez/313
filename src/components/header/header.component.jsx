@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import  Navbar from 'react-bootstrap/Navbar';
 import  Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import { List } from 'react-bootstrap-icons';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 import MetamaskButton from '../metamask-button/metamask-button.component';
 
@@ -22,12 +24,23 @@ const getPageBackground = (pathname) => {
 }
 
 const Header = () => {
+  const [ isNavCollapsed, setIsNavCollapsed ] = useState(true);
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('sm'));
+
   let location = useLocation();
+
+  const handleNavCollapse = () => {
+    if (!matches) {
+      setIsNavCollapsed(!isNavCollapsed);
+    }
+  }
 
   return (
   
-    <Navbar collapseOnSelect expand="sm" fixed="top" 
-      className={`header ${getPageBackground(location.pathname)}`}>
+    <Navbar expand="sm" fixed="top" 
+      className={`header ${getPageBackground(location.pathname)}`}
+      expanded={!isNavCollapsed} >
       <Container fluid className="navbar-container">
         <Navbar.Brand>
           <Link to='/'>
@@ -40,13 +53,17 @@ const Header = () => {
             borderColor: 'white',
             color: 'white',
           }}
+          onClick={handleNavCollapse}
         ><List color="white" size='24'/></Navbar.Toggle>
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <Navbar.Collapse id="responsive-navbar-nav" >
           <Nav className="me-auto options">
-            <Nav.Link as={Link} className="option" to='/'>Home</Nav.Link>
-            <Nav.Link as={Link} className="option" to='/mint'>Mint</Nav.Link>
+            <Nav.Link as={Link} className="option" to='/' onClick={handleNavCollapse}>Home</Nav.Link>
+            <Nav.Link as={Link} className="option" to='/mint' onClick={handleNavCollapse}>Mint</Nav.Link>
           </Nav>
-          <MetamaskButton className="d-flex option"/>
+          <div onClick={handleNavCollapse}>
+            <MetamaskButton className="d-flex option" />
+          </div>
+          
         </Navbar.Collapse>
       </Container>
     </Navbar>

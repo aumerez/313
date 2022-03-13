@@ -13,11 +13,11 @@ import backgroundImage from "../../assets/imgs/background_mint-01.png";
 
 const MintPage = () => (
   <div>
-    <div className="page">
-      <img src= {backgroundImage} className='bg-image' alt=""/>
+    <div className="mint-page">
+      <img src= {backgroundImage} className='mint-bg-image' alt=""/>
       
       <div >
-        <Image src={mintImage} position='sticky' className='img'/> 
+        <Image src={mintImage} position='sticky' className='mint-img'/> 
         {/*<img src= {homeImage} className='img' alt="" />*/}
 
       </div>

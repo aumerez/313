@@ -12,11 +12,11 @@ import scroll from '../../assets/imgs/ScrollBar-01.png';
 
 const HomePage = () => (
   <div>
-    <div className="page">
-      <img src= {backgroundImage} className='bg-image' alt=""/>
+    <div className="home-page">
+      <img src= {backgroundImage} className='home-bg-image' alt=""/>
       
       <div >
-        <Image src={homeImage} position='sticky' className='img'/> 
+        <Image src={homeImage}  className='home-img'/> 
         {/*<img src= {homeImage} className='img' alt="" />*/}
 
       </div>

@@ -7,7 +7,7 @@ import './mintpage.styles.scss';
 
 const MintPage = () => (
     <div className='mints'>
-        <img src={ImageMint} id='bg1' />
+        <img src={ImageMint} id='bg1' alt=""/>
         <div className='text-wrapper'>
             <h1>MINT A</h1>
             <h1>DETROIT</h1>
