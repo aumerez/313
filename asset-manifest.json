@@ -1,27 +1,30 @@
 {
   "files": {
-    "main.css": "/313/static/css/main.c3914d32.chunk.css",
-    "main.js": "/313/static/js/main.a538dc53.chunk.js",
-    "main.js.map": "/313/static/js/main.a538dc53.chunk.js.map",
+    "main.css": "/313/static/css/main.d8c7deb4.chunk.css",
+    "main.js": "/313/static/js/main.0a82b1e3.chunk.js",
+    "main.js.map": "/313/static/js/main.0a82b1e3.chunk.js.map",
     "runtime-main.js": "/313/static/js/runtime-main.bf09825e.js",
     "runtime-main.js.map": "/313/static/js/runtime-main.bf09825e.js.map",
-    "static/js/2.f1d50894.chunk.js": "/313/static/js/2.f1d50894.chunk.js",
-    "static/js/2.f1d50894.chunk.js.map": "/313/static/js/2.f1d50894.chunk.js.map",
+    "static/css/2.0a9ec390.chunk.css": "/313/static/css/2.0a9ec390.chunk.css",
+    "static/js/2.7e168b99.chunk.js": "/313/static/js/2.7e168b99.chunk.js",
+    "static/js/2.7e168b99.chunk.js.map": "/313/static/js/2.7e168b99.chunk.js.map",
     "index.html": "/313/index.html",
-    "static/css/main.c3914d32.chunk.css.map": "/313/static/css/main.c3914d32.chunk.css.map",
-    "static/js/2.f1d50894.chunk.js.LICENSE.txt": "/313/static/js/2.f1d50894.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/313/static/media/background_mint-01.6e9ada0d.png",
+    "static/css/2.0a9ec390.chunk.css.map": "/313/static/css/2.0a9ec390.chunk.css.map",
+    "static/css/main.d8c7deb4.chunk.css.map": "/313/static/css/main.d8c7deb4.chunk.css.map",
+    "static/js/2.7e168b99.chunk.js.LICENSE.txt": "/313/static/js/2.7e168b99.chunk.js.LICENSE.txt",
+    "static/media/header.styles.scss": "/313/static/media/background_mint-01.6e9ada0d.png",
     "static/media/Illustration-02.bf28429a.png": "/313/static/media/Illustration-02.bf28429a.png",
-    "static/media/Illustration_Mint-01.e06edfc0.png": "/313/static/media/Illustration_Mint-01.e06edfc0.png",
-    "static/media/homepage.styles.scss": "/313/static/media/LeagueGothic-Italic.8d24e264.otf",
-    "static/media/header.styles.scss": "/313/static/media/LeagueGothic-Regular.308bc269.otf",
+    "static/media/Illustration_Mint-01_Text2.ca57c7b4.png": "/313/static/media/Illustration_Mint-01_Text2.ca57c7b4.png",
+    "static/media/mint-page.styles.scss": "/313/static/media/LeagueGothic-Italic.8d24e264.otf",
+    "static/media/footer.styles.scss": "/313/static/media/LeagueGothic-Regular.308bc269.otf",
     "static/media/ScrollBar-01.1ef18a0a.png": "/313/static/media/ScrollBar-01.1ef18a0a.png",
     "static/media/logo_white.76303385.png": "/313/static/media/logo_white.76303385.png"
   },
   "entrypoints": [
     "static/js/runtime-main.bf09825e.js",
-    "static/js/2.f1d50894.chunk.js",
-    "static/css/main.c3914d32.chunk.css",
-    "static/js/main.a538dc53.chunk.js"
+    "static/css/2.0a9ec390.chunk.css",
+    "static/js/2.7e168b99.chunk.js",
+    "static/css/main.d8c7deb4.chunk.css",
+    "static/js/main.0a82b1e3.chunk.js"
   ]
 }
