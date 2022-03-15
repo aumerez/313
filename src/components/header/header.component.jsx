@@ -24,7 +24,7 @@ const getPageBackground = (pathname) => {
 }
 
 const Header = () => {
-  const [ isNavCollapsed, setIsNavCollapsed ] = useState(true);
+  const [ isNavCollapsed, setIsNavCollapsed ] = useState(false);
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('sm'));
 
@@ -40,7 +40,7 @@ const Header = () => {
   
     <Navbar expand="sm" fixed="top" 
       className={`header ${getPageBackground(location.pathname)}`}
-      expanded={!isNavCollapsed} >
+      expanded={isNavCollapsed} >
       <Container fluid className="navbar-container">
         <Navbar.Brand>
           <Link to='/'>
