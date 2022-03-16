@@ -1,5 +1,6 @@
 import React  from "react";
 import { useSelector } from 'react-redux';
+import mintCharacter from '../../web3/ws'; 
 
 import './mint-button.styles.scss';
 import '../../assets/fonts/LeagueGothic-Italic.otf';
@@ -9,8 +10,10 @@ const MintButton = () => {
   const wallet = useSelector(state => state.wallet.currentWallet); 
 
   const mint = async () => {
+    mintCharacter();
     console.log("MINT");
   }
+  
   
   return (
     <button className='mint-btn' onClick={mint}>
