@@ -6,8 +6,8 @@ import Image from 'react-bootstrap/Image';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../assets/fonts/LeagueGothic-Italic.otf';
 
-import homeImage from '../../assets/imgs/Illustration-02.png';
-import backgroundImage from '../../assets/imgs/Background_Orange.png';
+import homeImage from '../../assets/imgs/Illustration-02_sm.png';
+import backgroundImage from '../../assets/imgs/Background_Orange_sm.png';
 import scroll from '../../assets/imgs/ScrollBar-01.png';
 
 const HomePage = () => (
