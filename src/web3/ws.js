@@ -3,7 +3,7 @@ import ABI from './NFT';
 
 // Creates transaction to mint NFT on clicking Mint Character button
 const mintCharacter = async () => {
-const nftContractAddress = '0x33b9A7FCDdaC57D7640986DA31Ed494E3a639dAb'//process.env.NFT_CONTRACT_ADDRESS//getEnvVariable("NFT_CONTRACT_ADDRESS");
+const nftContractAddress =  '0x33b9A7FCDdaC57D7640986DA31Ed494E3a639dAb'//process.env.NFT_CONTRACT_ADDRESS//getEnvVariable("NFT_CONTRACT_ADDRESS");
     try {
         const { ethereum } = window
 
