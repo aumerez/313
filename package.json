@@ -2,7 +2,7 @@
   "name": "313_ducks",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://http://313project.io/",
+  "homepage": "http://313project.io/", 
   "dependencies": {
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
