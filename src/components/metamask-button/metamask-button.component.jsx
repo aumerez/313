@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import AppToast from "../app-toast/app-toast.component";
 import { TOAST_MESSAGE_TYPES } from "../app-toast/app-toast.component";
 
-import { NETWORKS } from '../../web3/networks'
+import { NETWORKS_LABEL } from '../../web3/networks'
 import { setCurrentWallet } from '../../redux/wallet/wallet.actions';
 
 import './metamask-button.styles.scss';
@@ -21,6 +21,8 @@ const MetamaskButton = () => {
       text : '',
       type : null
     })
+
+  const ETHEREUM_NETWORK = process.env.REACT_APP_ETHEREUM_NETWORK;
 
   useEffect(()=> {
     if (showMetamask || wallet) {
@@ -65,8 +67,8 @@ const MetamaskButton = () => {
     const { ethereum } = window;
     if (ethereum && !wallet) {
       try {
-        const network = ethereum.networkVersion; //await web3.eth.getChainId;
-        if (network < NETWORKS.ETHEREUM_GOERLY) {
+        const network = ethereum.networkVersion; 
+        if (network === ETHEREUM_NETWORK) {
           setShowMetamask(true);
           const accounts = await ethereum.request({
             method: 'eth_requestAccounts'});
@@ -75,7 +77,7 @@ const MetamaskButton = () => {
         } else {
           setToastContent({
             title: 'Network Error',
-            text: 'Wrong Network. Please select Ethereum Network',
+            text: `Wrong Network. Expected ${NETWORKS_LABEL[ETHEREUM_NETWORK]} Network`,
             type: TOAST_MESSAGE_TYPES.ERROR
           })
           setShowToast(true);
