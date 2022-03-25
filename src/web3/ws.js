@@ -14,6 +14,9 @@ const mintCharacter = async () => {
         ABI,
         signer
       )
+      const currentId = await nftContract.currentId
+      console.log('Numero de minting en else....', currentId)
+
       const address = await signer.getAddress()
       console.log('Address....', address)
       let nftTx = await nftContract.mintTo(address)
