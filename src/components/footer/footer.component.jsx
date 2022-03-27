@@ -4,7 +4,7 @@ import Stack from 'react-bootstrap/Stack';
 import  Navbar from 'react-bootstrap/Navbar';
 import  Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
-import { Instagram, Twitter } from 'react-bootstrap-icons';
+import { Discord, Facebook, Instagram, Twitter } from 'react-bootstrap-icons';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../assets/fonts/LeagueGothic-Italic.otf';
@@ -23,6 +23,9 @@ const Footer = () => {
                   </Nav.Link>
                   <Nav.Link href='https://twitter.com/313_Project' target="_blank">
                     <Twitter color="white" size='20'/>
+                  </Nav.Link>
+                  <Nav.Link href='https://discord.gg/H5c7Y6a9wz' target="_blank">
+                    <Discord color="white" size='20'/>
                   </Nav.Link>
                 </Stack>
                 <div className="footer-text">

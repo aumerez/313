@@ -2,7 +2,7 @@ import { ethers } from 'ethers';
 import ABI from './NFT';
 
 // Creates transaction to mint NFT on clicking Mint Character button
-const mintCharacter = async () => {
+const mintCharacter = async (numNFT) => {
   const nftContractAddress =  process.env.REACT_APP_NFT_CONTRACT_ADDRESS; 
   try {
     const { ethereum } = window
@@ -14,12 +14,13 @@ const mintCharacter = async () => {
         ABI,
         signer
       )
-      const currentId = await nftContract.currentId
-      console.log('Numero de minting en else....', currentId)
 
       const address = await signer.getAddress()
+      const functionshere = await nftContract.estimateGas.mintTo(address, 0)
+      console.log('Funstions....', functionshere)
+      console.log('Cantidad de nfts....', numNFT)
       console.log('Address....', address)
-      let nftTx = await nftContract.mintTo(address)
+      let nftTx = await nftContract.mintTo(address, numNFT)
             
       console.log('Minting....', nftTx.hash)
 

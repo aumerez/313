@@ -83,7 +83,8 @@ const MetamaskButton = () => {
           setShowToast(true);
         }
       } catch (e) {
-        console.log(e);
+        console.log("Error mio", e);
+        setShowToast(true);
       }
     }
   }

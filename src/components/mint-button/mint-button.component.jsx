@@ -2,6 +2,7 @@ import React, { useState }  from "react";
 import { useSelector } from 'react-redux';
 import mintCharacter from '../../web3/ws';
 import Slider from '@mui/material/Slider';
+import AppToast from "../app-toast/app-toast.component";
 
 import { saveMintTokens, getTokenId, getMintPrice } from '../../firebase/firebase.utils.js';
 import './mint-button.styles.scss';
@@ -25,18 +26,19 @@ const MintButton = () => {
   const [errorMessage, setErrorMessage ] = useState('');
   
   const mint = async () => {
-    //mintCharacter();
+    /* We pass the quanity of the selected nfts to mintCharacter function */
+    mintCharacter(tokenNumber);
+    console.log("MINT", errorMessage);
     let token = await getTokenId();
-    console.log("JAJAJAJ", token);
+    // console.log("JAJAJAJ", token);
     console.log("mintPrice",getMintPrice(token.tokenId));
     if (await saveMintTokens(1000,tokenNumber)) {
       console.log("after saveMintTokens");
       token = await getTokenId();
-      console.log("JAJAJAJ", token);
+      // console.log("JAJAJAJ", token);
       console.log("mintPrice",getMintPrice(token.tokenId));
       
     }
-    
   }
   
   const handleChange = (event) => {
