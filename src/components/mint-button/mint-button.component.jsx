@@ -35,26 +35,12 @@ const MintButton = () => {
     })
  
   const mint = async () => {
-    /* We pass the quanity of the selected nfts to mintCharacter function */
-    mintCharacter(tokenNumber,setShowToast,setToastContent);
-    console.log("MINT", );
     let token = await getTokenId();
-    // console.log("JAJAJAJ", token);
+    let price = getMintPrice(token.tokenId);
+    /* We pass the quanity of the selected nfts to mintCharacter function */
+    mintCharacter(tokenNumber,setShowToast,setToastContent,price);
+    console.log("MINT", token.tokenId);
     console.log("mintPrice",getMintPrice(token.tokenId));
-    if (await saveMintTokens(1000,tokenNumber)) {
-      console.log("after saveMintTokens");
-      token = await getTokenId();
-      console.log("mintPrice",getMintPrice(token.tokenId));
-      
-    } else {
-      setToastContent({
-        title: "Error",
-        text: `Error ${getMintPrice(token.tokenId)}`,
-        type: TOAST_MESSAGE_TYPES.ERROR
-      })
-      setShowToast(true);
-      console.log("Hubo error",getMintPrice(token.tokenId));
-    }
   }
   
   const handleChange = (event) => {

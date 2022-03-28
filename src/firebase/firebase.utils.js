@@ -27,10 +27,10 @@ export const saveMintTokens = async (tokenId, quantity=1) => {
     console.log("in saveMintTokens");
     const batch = writeBatch(db);
     const tokenIdInt = parseInt(tokenId);
-    for (let i = quantity; i > 0; i--) {
+    for (let i = 0; i < quantity; i++) {
       const tokenRef = doc(collection(db,COLLECTION_NAME));
       batch.set(tokenRef, {
-        tokenId : tokenIdInt - i + 1,
+        tokenId : tokenIdInt + i,
         createdAt : Timestamp.fromDate(new Date())
       })
     }
@@ -62,14 +62,10 @@ export const getTokenId = async () => {
 
 export const getMintPrice = (tokenId) => {
   const tokenIdInt = parseInt(tokenId) + 1;
-  console.log(tokenIdInt,tokenIdInt <= 100);
-  if (tokenIdInt <= 100)
+  console.log(tokenIdInt,tokenIdInt <= 5);
+  if (tokenIdInt <= 5)
     return 0;
-  if (tokenIdInt <= 200)
-    return 0.06;
-  if (tokenIdInt <= 400)
-    return 0.1;
-  if (tokenIdInt <= 1500) 
-    return 0.2;
-  return 0.5;
+  if (tokenIdInt <= 10)
+    return 0.0313;
+  return 0.06;
 }
