@@ -9,6 +9,8 @@ import './mint-button.styles.scss';
 import '../../assets/fonts/LeagueGothic-Italic.otf';
 import { CaretDownSquareFill } from "react-bootstrap-icons";
 
+import { TOAST_MESSAGE_TYPES } from "../app-toast/app-toast.component";
+
 const marks = [
   {
     value: 1,
@@ -24,10 +26,17 @@ const MintButton = () => {
   const wallet = useSelector(state => state.wallet.currentWallet); 
   const [tokenNumber, setTokenNumber] = useState(1);
   const [errorMessage, setErrorMessage ] = useState('');
-  
+  const [ showToast, setShowToast ] = useState(false);
+  const [ toastContent, setToastContent ] = 
+    useState({
+      title : '',
+      text : '',
+      type : null
+    })
+ 
   const mint = async () => {
     /* We pass the quanity of the selected nfts to mintCharacter function */
-    mintCharacter(tokenNumber);
+    mintCharacter(tokenNumber,setShowToast,setToastContent);
     console.log("MINT", );
     let token = await getTokenId();
     // console.log("JAJAJAJ", token);
@@ -35,10 +44,15 @@ const MintButton = () => {
     if (await saveMintTokens(1000,tokenNumber)) {
       console.log("after saveMintTokens");
       token = await getTokenId();
-      // console.log("JAJAJAJ", token);
       console.log("mintPrice",getMintPrice(token.tokenId));
       
     } else {
+      setToastContent({
+        title: "Error",
+        text: `Error ${getMintPrice(token.tokenId)}`,
+        type: TOAST_MESSAGE_TYPES.ERROR
+      })
+      setShowToast(true);
       console.log("Hubo error",getMintPrice(token.tokenId));
     }
   }
@@ -80,7 +94,7 @@ const MintButton = () => {
         (<div className="error-message">
           {errorMessage}
         </div>) : null }
-      {/* <AppToast showToast={showToast} toastContent={toastContent} />   */}
+      <AppToast showToast={showToast} toastContent={toastContent} />
     </div>
 
     

@@ -1,8 +1,9 @@
 import { ethers } from 'ethers';
 import ABI from './NFT';
+import TOAST_MESSAGE_TYPES from '../components/app-toast/app-toast.component';
 
 // Creates transaction to mint NFT on clicking Mint Character button
-const mintCharacter = async (numNFT) => {
+const mintCharacter = async (numNFT, setShowToast, setToastContent) => {
   const nftContractAddress =  process.env.REACT_APP_NFT_CONTRACT_ADDRESS; 
   try {
     const { ethereum } = window
@@ -34,9 +35,22 @@ const mintCharacter = async (numNFT) => {
       console.log(`Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTx.hash}`)
 
     } else {
+      setToastContent({
+        title: "Metamask error",
+        text: "Please install Metamask",
+        type: TOAST_MESSAGE_TYPES.ERROR
+      })
+      setShowToast(true);
+
       console.log("Ethereum object doesn't exist!")
     }
   } catch (error) {
+    setToastContent({
+      title: 'Error minting character',
+      text: error,
+      type: TOAST_MESSAGE_TYPES.ERROR
+    })
+    setShowToast(true);
     console.log('Error minting character', error)
     
     //setTxError(error.message)
@@ -45,3 +59,4 @@ const mintCharacter = async (numNFT) => {
 }
 
 export default mintCharacter;
+
