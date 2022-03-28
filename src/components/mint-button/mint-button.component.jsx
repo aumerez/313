@@ -28,7 +28,7 @@ const MintButton = () => {
   const mint = async () => {
     /* We pass the quanity of the selected nfts to mintCharacter function */
     mintCharacter(tokenNumber);
-    console.log("MINT", errorMessage);
+    console.log("MINT", );
     let token = await getTokenId();
     // console.log("JAJAJAJ", token);
     console.log("mintPrice",getMintPrice(token.tokenId));
@@ -38,11 +38,14 @@ const MintButton = () => {
       // console.log("JAJAJAJ", token);
       console.log("mintPrice",getMintPrice(token.tokenId));
       
+    } else {
+      console.log("Hubo error",getMintPrice(token.tokenId));
     }
   }
   
   const handleChange = (event) => {
     setTokenNumber(event.target.value);
+    console.log("Entendiendo console");
     console.log(event.target.value,tokenNumber);
   }
   
@@ -77,6 +80,7 @@ const MintButton = () => {
         (<div className="error-message">
           {errorMessage}
         </div>) : null }
+      {/* <AppToast showToast={showToast} toastContent={toastContent} />   */}
     </div>
 
     

@@ -21,14 +21,15 @@ const mintCharacter = async (numNFT) => {
       console.log('Cantidad de nfts....', numNFT)
       console.log('Address....', address)
       let nftTx = await nftContract.mintTo(address, numNFT)
+      console.log("Pruebas con el console log", nftTx.estimateGas.mintTo(address,0))
             
       console.log('Minting....', nftTx.hash)
 
       let tx = await nftTx.wait()
       console.log('Minted!', tx)
-      //let event = tx.events[0]
-      //let value = event.args[2]
-      //let tokenId = value.toNumber()
+      let event = tx.events[0]
+      let value = event.args[2]
+      let tokenId = value.toNumber()
 
       console.log(`Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTx.hash}`)
 
@@ -37,8 +38,10 @@ const mintCharacter = async (numNFT) => {
     }
   } catch (error) {
     console.log('Error minting character', error)
+    
     //setTxError(error.message)
   }
+  
 }
 
 export default mintCharacter;
