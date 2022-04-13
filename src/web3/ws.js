@@ -2,9 +2,10 @@ import { ethers } from 'ethers';
 import ABI from './NFT';
 import TOAST_MESSAGE_TYPES from '../components/app-toast/app-toast.component';
 import { saveMintTokens, getTokenId, getMintPrice } from '../firebase/firebase.utils.js';
+import enableMintButton from '../components/mint-button/mint-button.component'
 
 // Creates transaction to mint NFT on clicking Mint Character button
-const mintCharacter = async (numNFT, setShowToast, setToastContent, price) => {
+const mintCharacter = async (numNFT, setShowToast, setToastContent, price,setDisableMintButton,setButtonLabel) => {
   const nftContractAddress =  process.env.REACT_APP_NFT_CONTRACT_ADDRESS; 
   try {
     const { ethereum } = window
@@ -25,7 +26,7 @@ const mintCharacter = async (numNFT, setShowToast, setToastContent, price) => {
       console.log('Price....', price)
       console.log('Contrato....', nftContract)
       console.log('Cantidad pagada....', (price*numNFT).toString())
-      const options = {value: ethers.utils.parseEther(((price*numNFT).toFixed(4)).toString())}
+      const options = {value: ethers.utils.parseEther(((price*numNFT).toFixed(5)).toString())}
       let nftTx = await nftContract.mintTo(address, numNFT, options)
       // let nftTx = await nftContract.mintTo(address, numNFT)
       // console.log("Pruebas con el console log", nftTx.estimateGas.mintTo(address,0))
@@ -43,8 +44,12 @@ const mintCharacter = async (numNFT, setShowToast, setToastContent, price) => {
 
       if (await saveMintTokens(tokenId,numNFT)) {
         console.log("after saveMintTokens");
+        setDisableMintButton(false);
+        setButtonLabel("MINT");
         
       } else {
+        setDisableMintButton(false);
+        setButtonLabel("MINT");
         setToastContent({
           title: "Error",
           text: "Can't save this transaction",
@@ -56,6 +61,8 @@ const mintCharacter = async (numNFT, setShowToast, setToastContent, price) => {
       console.log(`Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTx.hash}`)
 
     } else {
+      setDisableMintButton(false);
+      setButtonLabel("MINT");
       setToastContent({
         title: "Metamask error",
         text: "Please install Metamask",
@@ -64,9 +71,12 @@ const mintCharacter = async (numNFT, setShowToast, setToastContent, price) => {
       setShowToast(true);
 
       console.log("Ethereum object doesn't exist!")
+      
     }
   } catch (error) {
     console.log('Error minting character', error)
+    setDisableMintButton(false);
+    setButtonLabel("MINT");
     setToastContent({
       title: 'Error minting character',
       text: error.error.message,
@@ -74,6 +84,8 @@ const mintCharacter = async (numNFT, setShowToast, setToastContent, price) => {
     })
     setShowToast(true);
     console.log('Error minting character', error.error.message)
+
+    
     
     //setTxError(error.message)
   }

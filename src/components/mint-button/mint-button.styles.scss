@@ -27,6 +27,13 @@
     border-color: transparent;
   }
   
+  &:disabled {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-color: transparent;
+  }
+  
   .mint-button-address-label {
     line-height: 40%;
     font-size: large !important;
@@ -40,7 +47,7 @@
     text-align: center;
     color: #000000;
     font-size: 36px;
-    margin-bottom: 0%;
+    margin-bottom: -10%;
     margin-top: -1%;
     background-color: #c5f710;
     border-radius: 100px;
@@ -52,6 +59,13 @@
     line-height: 110%;
     
     &:hover {
+      background-color: white;
+      color: black;
+      border: 1px solid black;
+      border-color: transparent;
+    }
+
+    &:disabled {
       background-color: white;
       color: black;
       border: 1px solid black;

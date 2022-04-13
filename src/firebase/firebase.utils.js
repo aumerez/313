@@ -66,6 +66,6 @@ export const getMintPrice = (tokenId) => {
   if (tokenIdInt <= 5)
     return 0;
   if (tokenIdInt <= 10)
-    return 0.0313;
-  return 0.06;
+    return 0.00313;
+  return 0.006;
 }

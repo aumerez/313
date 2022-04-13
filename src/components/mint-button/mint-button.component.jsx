@@ -1,4 +1,4 @@
-import React, { useState }  from "react";
+import React, { useEffect, useState }  from "react";
 import { useSelector } from 'react-redux';
 import mintCharacter from '../../web3/ws';
 import Slider from '@mui/material/Slider';
@@ -27,6 +27,10 @@ const MintButton = () => {
   const [tokenNumber, setTokenNumber] = useState(1);
   const [errorMessage, setErrorMessage ] = useState('');
   const [ showToast, setShowToast ] = useState(false);
+  const [ disableMintButton, setDisableMintButton ] = useState(false);
+  const [ buttonLabel, setButtonLabel ] = useState('MINT');
+  const [ tokenFirebase, setTokenFirebase ] = useState('');
+  const [ mintPrice, setMintPrice ] = useState('');
   const [ toastContent, setToastContent ] = 
     useState({
       title : '',
@@ -35,31 +39,43 @@ const MintButton = () => {
     })
  
   const mint = async () => {
+    console.log("Hice clic en el mint button");
+    setDisableMintButton(true);
+    setButtonLabel("MINTING...");
     let token = await getTokenId();
     let price = getMintPrice(token.tokenId);
     /* We pass the quanity of the selected nfts to mintCharacter function */
-    mintCharacter(tokenNumber,setShowToast,setToastContent,price);
+    mintCharacter(tokenNumber,setShowToast,setToastContent,price,setDisableMintButton,setButtonLabel);
     console.log("MINT", token.tokenId);
     console.log("mintPrice",getMintPrice(token.tokenId));
   }
+
   
-  const handleChange = (event) => {
+  const handleChange = async (event) => {
+    let tokenFirebase = await getTokenId();
+    let mintPriceVar = await getMintPrice(tokenFirebase.tokenId);
     setTokenNumber(event.target.value);
-    console.log("Entendiendo console");
+    setMintPrice(mintPriceVar);
+    console.log("Entendiendo console 1", tokenFirebase);
     console.log(event.target.value,tokenNumber);
   }
+
+  // useEffect(()=>{
+  //   console.log("USE EFFECT", tokenFirebase);
+  //   setButtonLabel('MINT ' + tokenFirebase);
+  // },[tokenFirebase])
   
   return (
     <div>
-      <button className='mint-btn' onClick={mint}>
+      <button className='mint-btn' onClick={mint} disabled={disableMintButton}>
         { wallet ? 
           (<div>
-            { 'MINT' } 
+            { buttonLabel} 
             <div className='mint-button-address-label'>
-              {wallet.substring(0,15)}{'...'}
+              {'The actual price of the minting is '}{mintPrice}
             </div>
           </div>) : (
-            <div>MINT
+            <div> {'MINT'}
             <div className='mint-button-address-label'>
               No Wallet Selected
             </div>
