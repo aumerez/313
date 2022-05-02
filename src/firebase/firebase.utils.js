@@ -62,10 +62,10 @@ export const getTokenId = async () => {
 
 export const getMintPrice = (tokenId) => {
   const tokenIdInt = parseInt(tokenId) + 1;
-  console.log(tokenIdInt,tokenIdInt <= 5);
-  if (tokenIdInt <= 5)
+  console.log(tokenIdInt,tokenIdInt <= 199);
+  if (tokenIdInt <= 199)
     return 0;
-  if (tokenIdInt <= 10)
-    return 0.00313;
-  return 0.006;
+  if (tokenIdInt <= 513)
+    return 0.0313;
+  return 0.06;
 }

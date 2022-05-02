@@ -4,7 +4,6 @@
   padding: 0px;
   padding-right: 0px;
   padding-left: 0px;
-
   width: auto;
 }
 
@@ -41,10 +40,10 @@
     
     .mint-img {
       margin-top: -40px;
+      margin-bottom: 50px;
       position: fixed;
       margin-left: 25px;
-      max-width:100%;
-      max-height:100%;
+      width:100%;
     }
   }
 }
@@ -114,4 +113,3 @@
   font-family: LeagueRegular;
   align-content: center;
 }
-

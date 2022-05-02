@@ -7,18 +7,49 @@ import AppToast from "../app-toast/app-toast.component";
 import { saveMintTokens, getTokenId, getMintPrice } from '../../firebase/firebase.utils.js';
 import './mint-button.styles.scss';
 import '../../assets/fonts/LeagueGothic-Italic.otf';
-import { CaretDownSquareFill } from "react-bootstrap-icons";
 
-import { TOAST_MESSAGE_TYPES } from "../app-toast/app-toast.component";
+
 
 const marks = [
   {
     value: 1,
-    label: '1 Token',
+    label: '',
   },
+  // {
+  //   value: 2,
+  //   label: '2',
+  // },
+  // {
+  //   value: 3,
+  //   label: '3',
+  // },
+  // {
+  //   value: 4,
+  //   label: '4',
+  // },
+  // {
+  //   value: 5,
+  //   label: '5',
+  // },
+  // {
+  //   value: 6,
+  //   label: '6',
+  // },
+  // {
+  //   value: 7,
+  //   label: '7',
+  // },
+  // {
+  //   value: 8,
+  //   label: '8',
+  // },
+  // {
+  //   value: 9,
+  //   label: '9',
+  // },
   {
     value: 10,
-    label: '10 Tokens',
+    label: '',
   }
 ];
 
@@ -29,7 +60,6 @@ const MintButton = () => {
   const [ showToast, setShowToast ] = useState(false);
   const [ disableMintButton, setDisableMintButton ] = useState(false);
   const [ buttonLabel, setButtonLabel ] = useState('MINT');
-  const [ tokenFirebase, setTokenFirebase ] = useState('');
   const [ mintPrice, setMintPrice ] = useState('');
   const [ toastContent, setToastContent ] = 
     useState({
@@ -49,7 +79,6 @@ const MintButton = () => {
     console.log("MINT", token.tokenId);
     console.log("mintPrice",getMintPrice(token.tokenId));
   }
-
   
   const handleChange = async (event) => {
     let tokenFirebase = await getTokenId();
@@ -59,11 +88,6 @@ const MintButton = () => {
     console.log("Entendiendo console 1", tokenFirebase);
     console.log(event.target.value,tokenNumber);
   }
-
-  // useEffect(()=>{
-  //   console.log("USE EFFECT", tokenFirebase);
-  //   setButtonLabel('MINT ' + tokenFirebase);
-  // },[tokenFirebase])
   
   return (
     <div>
@@ -82,16 +106,25 @@ const MintButton = () => {
           </div>  
         ) }
       </button>
-      <Slider
+      <Slider 
         defaultValue={1}
         onChange={handleChange}
-        valueLabelDisplay="auto"
+        aria-label="Always visible"
+        valueLabelDisplay="on"
         min={1}
         max={10}
+        marks={marks}
         sx={{
-          color: '#c5f710'
+          color: '#c5f710',
+          ml: 5,
+          // mb: -3,
+          fontSize: 40,
+          display: { xs: 'none', md:'block' }
         }}
       />
+      <div className="slide">
+        {/* How many Socialites NFTs do you want? */}
+      </div>
       { errorMessage ? 
         (<div className="error-message">
           {errorMessage}

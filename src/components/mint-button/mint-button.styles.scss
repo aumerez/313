@@ -3,14 +3,15 @@
   src: local("LeagueGothic"),
     url('../../assets/fonts/LeagueGothic-Regular.otf') format("truetype");
   font-weight: normal;
-}
+} 
 
 .mint-btn {
   text-align: center;
   color: #000000;
   font-size: 36px;
-  margin-bottom: 0%;
+  margin-bottom: -6px;
   margin-top: -1%;
+  margin-left: 100px;
   background-color: #c5f710;
   border-radius: 100px;
   border-color: transparent;
@@ -41,6 +42,16 @@
 
 }
 
+.slide {
+  font-family: "LeagueRegular";
+  text-align: center;
+  color: #2d2e28fd;
+  font-size: 36px;
+  margin-bottom: -px;
+  margin-left: 80px;
+  font-weight: bolder;
+}
+
 
 @media (max-width: 699px) {
   .mint-btn {
@@ -57,6 +68,7 @@
     white-space: pre-line;
     font-family: LeagueRegular;
     line-height: 110%;
+    margin-left: 0px;
     
     &:hover {
       background-color: white;
